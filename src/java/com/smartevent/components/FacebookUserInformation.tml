@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+   <h2>User Information</h2>
+    <t:if test="information.loggedIn">
+        <span>FirstName: ${user.firstname}</span><br />
+        <span>LastName: ${user.lastname}</span>
+        <p:else>
+            Not Logged in
+        </p:else>
+    </t:if>
+
+</html>

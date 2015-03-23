@@ -1,0 +1,20 @@
+<t:layout t:pageTitle="${message:title}"
+          xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <h1>${message:page_create_event_heading}</h1>
+    <form action="api/rest/event" method="post">
+        <label for="title">${message:page_create_event_form_field_title_label}</label>
+        <input type="text" id="title" />
+        <br />
+        <label for="description">${message:page_create_event_form_field_description_label}</label>
+        <input type="text" id="description" />
+        <br />
+        <label for="date">${message:page_create_event_form_field_date_label}</label>
+        <input type="text" id="date" />
+        <br />
+        <label for="time">${message:page_create_event_form_field_time_label}</label>
+        <input type="text" id="time" class="eventTime" />
+        <br />
+        <input type="submit" value="${message:page_contact_form_button_create_label}" />
+    </form>
+    
+</t:layout>            

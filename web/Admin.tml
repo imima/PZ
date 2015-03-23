@@ -1,0 +1,14 @@
+<t:layout t:pageTitle="${message:title}"
+          xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <h1>${message:page_admin_heading}</h1><br/><br />
+    <h1>${message:page_create_event_heading}</h1>
+    <t:beaneditform t:id="event" submitlabel="message:action_create" />
+    <br />
+    <h1>${message:page_view_events_heading}</h1><br />
+    <t:grid source="events" row="event" add="delete">
+        <p:deleteCell>
+            <t:actionlink t:id="delete" t:context="event.id">${message:action_delete}</t:actionlink>
+        </p:deleteCell>
+        <p:empty>${message:page_view_events_list_is_currently_empty}</p:empty>
+    </t:grid>
+</t:layout>            

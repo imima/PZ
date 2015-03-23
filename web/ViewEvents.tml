@@ -1,0 +1,39 @@
+<t:layout t:pageTitle="${message:title}"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <t:if test="${eventCreatedMessage}">
+        <span class="infoMessage">${eventCreatedMessage}</span><br /><br />
+    </t:if>
+    <h1>${message:page_view_events_drop_box}</h1><br />
+    <div id="dropBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <h1>${message:page_view_events_heading}</h1><br />
+    <t:if test="${isEventListEmpty()}">
+        <p>${message:page_view_events_list_is_currently_empty}</p>
+        <p:else>
+            <t:loop source="events" value="event">
+                <div id="dragBox${event.id}" class="dragBox" draggable="true" ondragstart="drag(event)" ondrop="return false;" dropable="false">
+                    <h2>Event '${event.title}' scheduled for ${event.dateFormated} at ${event.eventTime} hours.</h2>
+                    <p>Description: ${event.description}</p>
+                    <p>Location: </p>
+                    <p>Tags: </p>    
+                    <p><t:actionlink t:id="edit" context="event.id">${message:action_edit}</t:actionlink> | <t:actionlink t:id="delete" context="event.id">${message:action_delete}</t:actionlink></p>
+                </div>
+            </t:loop>
+        </p:else>
+    </t:if>
+</t:layout>

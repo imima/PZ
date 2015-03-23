@@ -1,0 +1,7 @@
+<t:layout t:pageTitle="${message:title}"
+          xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+    <h1>${message:page_about_heading}</h1><br/>
+    <p>${message:page_about_paragraph_1}</p><br/>
+    <p>${message:page_about_paragraph_2}</p><br/>
+    <p>${message:page_about_paragraph_3}</p><br/>
+</t:layout>

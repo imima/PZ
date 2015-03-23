@@ -1,0 +1,124 @@
+/* 
+    Document   : styles
+    Created on : Jan 11, 2015, 11:01:30 PM
+    Author     : Mima
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video
+{
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+{
+    display:block
+}
+
+body{
+    font-family: Tahoma, Geneva, sans-serif;
+    margin-left: 2%;
+    text-align:center;
+}
+
+header {
+    width: 960px;
+    color:white;
+    background-color: black;
+    padding:10px;
+    margin:20px 0;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+footer {
+    border-top:1px solid black;
+    width: 960px;
+    padding:10px;
+    margin:20px 0;
+}
+
+#wrapper {
+    width: 960px;
+    display:block;
+}
+
+#navBox {
+    float:left;
+    text-align:right;
+}
+
+#navBox ul {
+    list-style-type: none;
+    padding-right:20px;
+}
+
+#navBox .loginBox {
+    padding-top:20px;
+    padding-right:20px;
+}
+
+#contentBox {
+    float:right;
+    text-align:left;
+}
+
+label {
+    width:100px;
+    display:inline-block;
+}
+
+ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+ul li.active {
+    color:red;
+    text-decoration: underline;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+.eventDate {
+    width:64px;
+}
+
+.eventHour {
+    width:64px;
+}
+
+.infoMessage {
+    color:blue;
+}
+
+DIV.t-beaneditor-row LABEL {
+    width: 100px;
+}
+
+#dropBox {
+    display:table;
+    width:500px;
+    height:70px;
+    padding: 10px;
+    border:1px solid #aaaaaa;
+    margin-bottom:20px;
+}
+
+#dropBox .dragBox {
+    display:block;
+    padding:10px;
+    margin:10px;
+    border:1px solid #aaaaaa;
+}

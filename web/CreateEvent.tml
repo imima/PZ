@@ -1,0 +1,36 @@
+<t:layout t:pageTitle="${message:title}"
+          xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <h1>${message:page_create_event_heading}</h1>
+    <t:form t:id="createEvent">
+        <t:beaneditor t:id="event" submitlabel="message:page_contact_form_button_create_label">
+            <p:title>
+                <div class="grid_8 alfa">
+                    <t:label for="title">${message:page_create_event_form_field_title_label}</t:label>
+                    <t:textfield t:id="title" value="event?.title" />
+                </div>
+            </p:title>
+            <p:description>
+                <div class="grid_8 alfa">
+                    <t:label for="description">${message:page_create_event_form_field_description_label}</t:label>
+                    <t:textfield t:id="description" value="event?.description" />
+                </div>
+            </p:description>
+            <p:eventDate>
+                <div class="grid_8 alfa">
+                    <t:label for="eventDate">${message:page_create_event_form_field_date_label}</t:label>
+                    <t:datefield t:id="eventDate" value="event?.eventDate" format="dd.MM.yyyy"/>
+                </div>
+            </p:eventDate>
+            <p:eventTime>
+                <div class="grid_8 alfa">
+                    <t:label for="eventTime">${message:page_create_event_form_field_time_label}</t:label>
+                    <t:textfield t:id="eventTime" value="event?.eventTime" class="eventTime" />
+                </div>
+            </p:eventTime>
+        </t:beaneditor>
+        <div class="grid_8 alfa" style="padding-left:102px;">
+            <t:submit t:id="submit" value="${submitActionLabel}" />
+        </div>
+    </t:form>
+    <div style="clear:both" /><br />
+</t:layout>            

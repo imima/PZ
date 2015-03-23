@@ -1,0 +1,6 @@
+<t:layout t:pageTitle="${message:title}"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <h1>${message:page_view_events_ajax_event_heading}</h1><br />
+    <a href="api/rest/event">${message:page_view_events_ajax_click_this_link}</a>
+</t:layout>

@@ -1,0 +1,12 @@
+<nav xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <ul>
+        <t:loop source="pages" value="page">
+            <t:if test="${isCurrentPage(page.key)}">
+                <li class="active">${page.value}</li>
+                <p:else>
+                    <li><t:pagelink t:page="${page.key}">${page.value}</t:pagelink></li>
+                </p:else>
+            </t:if>
+        </t:loop>
+    </ul>
+</nav>

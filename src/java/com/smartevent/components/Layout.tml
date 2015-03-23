@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:p="tapestry:parameter">
+    <head>
+        <meta name="generator" content="HTML Tidy, see www.w3.org" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"></link>
+        <title>${pagetitle}</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" ></link>
+        <link rel="stylesheet" href="css/styles.css"></link>
+    </head>
+    <body class="container"> <!-- Container je bootstrapova klasa-->
+
+        <!-- Header -->
+        <div class="row">
+            <header class="col-md-12">
+                <h1>${message:header_application_name}</h1>
+                <p><i><strong>${message:header_tagline}</strong></i></p>
+            </header>
+        </div>
+        <!-- -->
+        <div class="row">
+            <div class="col-md-12"> <!--id="wrapper"-->
+
+                
+                <div id="navBox" class="col-md-3">
+                    <!-- Navigation -->  
+                    <t:Navigation />   
+                    <!-- Login -->
+                    <div class="loginBox">
+                        <t:delegate to="activeBlock"/>
+
+                        <t:block id="loginBlock">
+                            <t:beaneditform t:id="login" exclude="firstName,lastName,email,events,role" submitlabel="message:login">
+                                <p:username>
+                                    <t:label for="username" />
+                                    <t:textfield t:id="username" style="background-color:blue" t:value="login.username" size="15">${login?.password}</t:textfield>
+                                </p:username>
+                                <p:password>
+                                    <t:label for="password"/>
+                                    <t:passwordfield t:id="password" t:value="login.password" size="15">${login?.password}</t:passwordfield>
+                                </p:password>
+                            </t:beaneditform>
+                        </t:block>
+                        <t:block id="loggedinBlock">
+                            <t:actionlink t:id="logout">${message:logout}</t:actionlink>  ${ssoUser.username}<br /><br />
+                            <t:zone t:id="timeSpentOnSite" t:mixins='zoneRefresh' t:period='1'>
+                                Seconds spent on page ${timeSpent}
+                            </t:zone>
+                        </t:block> 
+                    </div>
+                </div>
+                <!-- Glavni deo stranice, sadrzaj-->
+                <div id="contentBox"  class="col-md-9">
+                    <section> <!--odavde je izbrisano col-md-9 -->
+                        <t:body />
+                    </section>
+                </div>
+    
+                <div style="clear:both"></div>
+            </div>
+
+        </div>
+            <!-- Footer -->
+            <div class="row">
+                    <footer class="col-md-12">
+                        <p>${message:footer_copyright}<strong>${message:footer_copyright_owner}</strong></p>
+                    </footer>
+            </div>
+         <!-- Bootstrap i jQuery-->
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+
+    </body>
+</html>

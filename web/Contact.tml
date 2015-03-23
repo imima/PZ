@@ -1,0 +1,16 @@
+<t:layout t:pageTitle="${message:title}"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:ex="tapestry-library:exanpe">
+    <h1>${message:page_contact_heading}</h1><br/>
+    <t:form t:id="sendMessage">
+        ${message:page_contact_form_field_name_label}<br/>
+        <t:textfield t:id="name" value="contactMessage?.name" /><br/>
+        ${message:page_contact_form_field_email_label}<br/> 
+        <t:textfield t:id="email" value="contactMessage?.email" /><br/>
+        ${message:page_contact_form_field_message_label}<br/>
+        <t:textarea t:id="message" value="contactMessage?.message" rows="4" cols="20" /><br/>
+        <input type="submit" value="${message:page_contact_form_button_send_label}" />
+    </t:form><br />
+    <h1>${message:page_contact_our_location}</h1>
+    <ex:gmap t:id="map" latitude="44.815987" longitude="20.460466" mapType="terrain" />
+ </t:layout>

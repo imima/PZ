@@ -1,0 +1,18 @@
+<t:layout t:pageTitle="${message:title}"
+          xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+    <h1>${message:page_faq_heading}</h1><br/>
+    <ul>
+        <li>
+            <h2>${message:page_faq_question_1}</h2>
+            <p>${message:page_faq_answer_1}</p><br/>
+        </li>
+        <li>
+            <h2>${message:page_faq_question_2}</h2>
+            <p>${message:page_faq_answer_2}</p><br/>
+        </li>
+        <li>
+            <h2>${message:page_faq_question_3}</h2>
+            <p>${message:page_faq_answer_3}</p><br/>
+        </li>
+    </ul>
+</t:layout>
